@@ -17,10 +17,12 @@ function DocActions() {
   return (
     <Toolbar>
       <Stack direction="row" spacing={2}>
-        <IconButton sx={styles.deleteBtn}>
+        <IconButton sx={styles.deleteBtn} aria-label="delete document">
           <DeleteIcon />
         </IconButton>
-        <MainBtn startIcon={<SaveIcon />}>Save Changes</MainBtn>
+        <MainBtn startIcon={<SaveIcon />} aria-label="save changes">
+          Save Changes
+        </MainBtn>
       </Stack>
     </Toolbar>
   );
