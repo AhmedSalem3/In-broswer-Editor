@@ -5,14 +5,17 @@ const styles = {
   doc: {
     display: {
       xs: "none",
-      md: "block",
-    },
+      md: "block"
+    }
   },
+  wrapper: {
+    flexGrow: 1
+  }
 };
 
 function DocName() {
   return (
-    <Stack direction="row" spacing={2} alignItems="center">
+    <Stack direction="row" spacing={2} alignItems="center" sx={styles.wrapper}>
       <InsertDriveIcon />
 
       <Stack alignItems="flex-start">

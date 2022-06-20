@@ -7,13 +7,18 @@ import {
   Typography
 } from "@mui/material";
 import DocActions from "./HeaderActions/DocActions";
+import AuthActions from "./HeaderActions/AuthActions";
 import { useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import DocName from "./DocName";
 
 const styles = {
   box: { flexGrow: 1 },
-  navBar: { backgroundColor: "primary.gray", flexDirection: "row" },
+  navBar: {
+    backgroundColor: "primary.gray",
+    flexDirection: "row",
+    alignItems: "center"
+  },
   menuBtn: {
     padding: "20px",
     backgroundColor: "primary.lightGray",
@@ -37,6 +42,9 @@ const styles = {
 function Header() {
   const [menuActive, setMenuActive] = useState(false);
 
+  //TODO: check if the user is authenticated or not
+  const isAuth = true;
+
   return (
     <Box sx={styles.box}>
       <AppBar position="static" sx={styles.navBar}>
@@ -54,7 +62,8 @@ function Header() {
         </Toolbar>
 
         <DocName />
-        <DocActions />
+
+        {isAuth ? <DocActions /> : <AuthActions />}
       </AppBar>
     </Box>
   );
