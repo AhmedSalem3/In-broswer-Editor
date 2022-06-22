@@ -4,7 +4,7 @@ const initialState = {
   user: null
 };
 
-const { actions, reducer } = createSlice({
+const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -24,7 +24,7 @@ function signin(username, password) {
     //TODO add firebase request
     const userCred = { username, password };
     if (userCred) {
-      dispatch(actions.updateUser(userCred));
+      dispatch(authSlice.actions.updateUser(userCred));
     }
   };
 }
@@ -34,11 +34,11 @@ function signup(username, password, displayName) {
     //TODO add firebase request
     const userCred = { username, password, displayName };
     if (userCred) {
-      dispatch(actions.updateUser(userCred));
+      dispatch(authSlice.actions.updateUser(userCred));
     }
   };
 }
 
-export default actions;
-export const authReducer = reducer;
+export default authSlice.actions;
+export const authReducer = authSlice.reducer;
 export { signin, signup };

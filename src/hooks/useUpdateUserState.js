@@ -4,7 +4,7 @@ import { auth } from "../firebase";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store/actions";
 
-function useUpdateUser() {
+function useUpdateUserState() {
   const dispatch = useDispatch();
 
   //* realtime chanegs for the user state (signin, signup, logout)
@@ -21,4 +21,4 @@ function useUpdateUser() {
   }, [dispatch]);
 }
 
-export default useUpdateUser;
+export default useUpdateUserState;
