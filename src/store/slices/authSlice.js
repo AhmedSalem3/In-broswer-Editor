@@ -8,7 +8,7 @@ const { actions, reducer } = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    addUser(state, actions) {
+    updateUser(state, actions) {
       state.user = actions.payload;
     },
     logout(state) {
@@ -24,7 +24,7 @@ function signin(username, password) {
     //TODO add firebase request
     const userCred = { username, password };
     if (userCred) {
-      dispatch(actions.addUser(userCred));
+      dispatch(actions.updateUser(userCred));
     }
   };
 }
@@ -34,7 +34,7 @@ function signup(username, password, displayName) {
     //TODO add firebase request
     const userCred = { username, password, displayName };
     if (userCred) {
-      dispatch(actions.addUser(userCred));
+      dispatch(actions.updateUser(userCred));
     }
   };
 }

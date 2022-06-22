@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Stack,
   TextareaAutosize,
@@ -5,27 +6,24 @@ import {
   Typography,
   Box
 } from "@mui/material";
+import Textarea from "./Textarea";
 
 const styles = {
   stack: { flex: 1 },
-  fullWidth: { height: "100%" },
-  textarea: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "transparent",
-    borderColor: "transparent",
-    outlineWidth: "0",
-    color: "primary.main",
-    resize: "none"
-  }
+  fullHeight: { height: "100%" }
 };
 
 function Markdown() {
+  const [text, setText] = useState("");
   return (
     <Stack sx={styles.stack}>
-      <Box sx={styles.fullWidth}>
+      <Box>
         <Container sx={styles.fullWidth}>
-          <textarea style={styles.textarea}></textarea>
+          <Textarea
+            textChangeHandler={() => {
+              setText();
+            }}
+          />
         </Container>
       </Box>
     </Stack>
