@@ -22,8 +22,9 @@ const docsSlice = createSlice({
       state.docs = action.payload;
     },
     // this fn(setCurrentDoc) will be called whenever we wanto set the active doc in the editor
-    setCurrentDoc(state, { payload: id = 0 }) {
-      state.currentDoc = state.docs[id] || null;
+    setCurrentDoc(state, { payload: id = null }) {
+      state.currentDoc =
+        state.docs.find((doc) => doc.id === id) || state.docs[0] || null;
     }
   }
 });

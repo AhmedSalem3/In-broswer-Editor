@@ -23,7 +23,7 @@ function DocName() {
           Document Name
         </Typography>
         <Typography variant="body1" color="primary.white">
-          doc.md
+          example.md
         </Typography>
       </Stack>
     </Stack>

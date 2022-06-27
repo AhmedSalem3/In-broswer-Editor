@@ -6,6 +6,7 @@ import useUpdateUserState from "./hooks/useUpdateUserState";
 import useRealtimeDocsUpdate from "./hooks/useRealtimeDocsUpdate";
 import Editor from "./components/pages/Editor/Editor";
 import { Box } from "@mui/material";
+import AppDrawer from "./components/Drawer/AppDrawer";
 
 const styles = {
   app: { backgroundColor: "primary.black" }
@@ -22,6 +23,7 @@ function App() {
   return (
     <Box className="App" sx={styles.app}>
       <Header />
+      <AppDrawer />
       <Editor />
     </Box>
   );

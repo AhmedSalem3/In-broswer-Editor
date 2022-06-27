@@ -1,12 +1,7 @@
 import { useState } from "react";
-import {
-  Stack,
-  TextareaAutosize,
-  Container,
-  Typography,
-  Box
-} from "@mui/material";
+import { Stack, Container, Box } from "@mui/material";
 import Textarea from "./Textarea";
+import EditorFieldTitle from "./EditorFieldTitle";
 
 const styles = {
   stack: { flex: 1 },
@@ -18,6 +13,7 @@ function Markdown() {
   return (
     <Stack sx={styles.stack}>
       <Box>
+        <EditorFieldTitle>Markdown</EditorFieldTitle>
         <Container sx={styles.fullWidth}>
           <Textarea
             textChangeHandler={() => {

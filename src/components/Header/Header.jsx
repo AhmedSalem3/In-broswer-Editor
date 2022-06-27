@@ -26,6 +26,9 @@ const styles = {
     color: "primary.white",
     fontSize: "2rem"
   },
+  headerLeftHolder: {
+    paddingLeft: "0 !important"
+  },
   title: {
     letterSpacing: "5px",
     textTransform: "uppercase",
@@ -48,7 +51,7 @@ function Header() {
   return (
     <Box sx={styles.box}>
       <AppBar position="static" sx={styles.navBar}>
-        <Toolbar>
+        <Toolbar sx={styles.headerLeftHolder}>
           <IconButton sx={styles.menuBtn}>
             <MenuOutlinedIcon fontSize="inherit" />
           </IconButton>

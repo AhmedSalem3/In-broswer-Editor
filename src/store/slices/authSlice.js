@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: null
+  //TODO: set the initial dtate to null
+  //* wwas testing before implementing auth
+  user: { uid: "234242345" }
 };
 
 const authSlice = createSlice({
