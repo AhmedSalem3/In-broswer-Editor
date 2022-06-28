@@ -1,16 +1,12 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./components/Header/Header";
 import useCompiler from "./hooks/useCompiler";
 import useUpdateUserState from "./hooks/useUpdateUserState";
 import useRealtimeDocsUpdate from "./hooks/useRealtimeDocsUpdate";
-import Editor from "./components/pages/Editor/Editor";
-import { Box } from "@mui/material";
-import AppDrawer from "./components/Drawer/AppDrawer";
-
-const styles = {
-  app: { backgroundColor: "primary.black" }
-};
+import { Routes, Route, Navigate } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   const [text, setText] = useState("");
@@ -21,12 +17,17 @@ function App() {
   useRealtimeDocsUpdate();
 
   return (
-    <Box className="App" sx={styles.app}>
-      <Header />
-      <AppDrawer />
-      <Editor />
-    </Box>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+      {/* // redirect user yo the mainpage  */}
+      <Route path="*" element={<Navigate to="/" replace={true} />} />
+    </Routes>
   );
 }
 
 export default App;
+
+//TODO:  create a hook for dispatching by passing action argument

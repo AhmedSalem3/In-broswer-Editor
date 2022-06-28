@@ -20,7 +20,11 @@ function DocActions() {
         <IconButton sx={styles.deleteBtn} aria-label="delete document">
           <DeleteIcon />
         </IconButton>
-        <MainBtn startIcon={<SaveIcon />} aria-label="save changes">
+        <MainBtn
+          startIcon={<SaveIcon />}
+          aria-label="save changes"
+          hideOnMobile
+        >
           Save Changes
         </MainBtn>
       </Stack>

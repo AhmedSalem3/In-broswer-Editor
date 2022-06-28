@@ -1,29 +1,46 @@
 import { Button, Typography } from "@mui/material";
 
-const styles = {
-  btn: {
-    backgroundColor: "primary.main",
-    color: "primary.white",
-    borderRadius: "3px",
-    padding: "12px",
-    "&:hover": {
+function MainBtn({
+  children,
+  hideOnMobile = false,
+  linkTo = null,
+  onClick = null,
+  ...props
+}) {
+  const navigate = () => {};
+  //  useNavigate();
+  const styles = {
+    btn: {
       backgroundColor: "primary.main",
-      opacity: 0.6,
-      transition: "0.3s"
+      color: "primary.white",
+      borderRadius: "3px",
+      padding: "12px",
+      "&:hover": {
+        backgroundColor: "primary.main",
+        opacity: 0.6,
+        transition: "0.3s"
+      }
+    },
+    btnText: {
+      textTransform: "initial",
+      display: {
+        xs: hideOnMobile ? "none" : "block",
+        md: "block"
+      }
     }
-  },
-  btnText: {
-    textTransform: "initial",
-    display: {
-      xs: "none",
-      md: "block"
+  };
+  function clickHadnler(e) {
+    if (linkTo) {
+      navigate(linkTo);
+    }
+    // passed click event
+    if (onClick instanceof Function) {
+      onClick(e);
     }
   }
-};
 
-function MainBtn({ children, ...props }) {
   return (
-    <Button sx={styles.btn} {...props}>
+    <Button sx={styles.btn} onClick={clickHadnler} {...props}>
       <Typography variant="body1" sx={styles.btnText}>
         {children}
       </Typography>

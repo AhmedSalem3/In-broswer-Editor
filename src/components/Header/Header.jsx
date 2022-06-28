@@ -1,16 +1,11 @@
-import {
-  Container,
-  AppBar,
-  IconButton,
-  Toolbar,
-  Box,
-  Typography
-} from "@mui/material";
+import { AppBar, IconButton, Toolbar, Box } from "@mui/material";
 import DocActions from "./HeaderActions/DocActions";
 import AuthActions from "./HeaderActions/AuthActions";
-import { useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import DocName from "./DocName";
+import DocName from "../UI/DocName";
+import { useDispatch } from "react-redux";
+import { uiActions } from "../../store/actions";
+import Logo from "../UI/Logo";
 
 const styles = {
   box: { flexGrow: 1 },
@@ -43,7 +38,11 @@ const styles = {
 };
 
 function Header() {
-  const [menuActive, setMenuActive] = useState(false);
+  const dispatch = useDispatch();
+
+  function toggleDrawer() {
+    dispatch(uiActions.toggleDrawer());
+  }
 
   //TODO: check if the user is authenticated or not
   const isAuth = true;
@@ -52,19 +51,13 @@ function Header() {
     <Box sx={styles.box}>
       <AppBar position="static" sx={styles.navBar}>
         <Toolbar sx={styles.headerLeftHolder}>
-          <IconButton sx={styles.menuBtn}>
+          <IconButton sx={styles.menuBtn} onClick={toggleDrawer}>
             <MenuOutlinedIcon fontSize="inherit" />
           </IconButton>
-          <Typography
-            variant="body1"
-            sx={styles.title}
-            display={styles.hideOnMobile}
-          >
-            Markdown
-          </Typography>
+          <Logo rightBorder={true} color="primary.white" hideOnMobile />
         </Toolbar>
 
-        <DocName />
+        <DocName hideHeaderOnMobile />
 
         {isAuth ? <DocActions /> : <AuthActions />}
       </AppBar>

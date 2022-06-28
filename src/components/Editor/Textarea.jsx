@@ -1,4 +1,4 @@
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 
 const CustomTextarea = styled(TextareaAutosize)(({ theme }) => ({
