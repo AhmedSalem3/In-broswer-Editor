@@ -1,0 +1,6 @@
+{
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "javascript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.completeFunctionCalls": true
+}
