@@ -66,3 +66,12 @@ function Header() {
 }
 
 export default Header;
+<<<<<<< HEAD
+=======
+
+
+// const addToListBtn = document.getElementById('add-to-list');
+// const downloadAllBtn = document.getElementById('download-all');
+// addToListBtn.addEventListener('click', addToListRequest);
+// downloadAllBtn.addEventListener('click', downloadAllRequest);
+>>>>>>> inbrowser/master

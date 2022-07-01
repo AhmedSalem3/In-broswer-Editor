@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { IconButton, Stack, Typography, Button, Toolbar } from "@mui/material";
+=======
+import { IconButton, Stack, Toolbar } from "@mui/material";
+>>>>>>> inbrowser/master
 import DeleteIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import SaveIcon from "@mui/icons-material/SaveOutlined";
 import MainBtn from "../../UI/Buttons/MainBtn";
